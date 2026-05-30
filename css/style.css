@@ -6,10 +6,10 @@
   --muted: #8b98a5;
   --accent: #ff8c42;
   --accent-2: #4cc9f0;
-  --A: #ff5252;
-  --B: #4cc9f0;
-  --C: #ffd166;
-  --D: #06d6a0;
+  --A: #a855f7;   /* purple */
+  --B: #facc15;   /* yellow */
+  --C: #f9a8d4;   /* light pink */
+  --D: #06d6a0;   /* green */
   --hover: #ffffff;
   --border: #2c3a4a;
 }

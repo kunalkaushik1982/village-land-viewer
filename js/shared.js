@@ -1,6 +1,6 @@
 // Shared helpers used by both labeler and viewer.
 
-export const COLORS = { A: "#ff5252", B: "#4cc9f0", C: "#ffd166", D: "#06d6a0" };
+export const COLORS = { A: "#a855f7", B: "#facc15", C: "#f9a8d4", D: "#06d6a0" };
 
 export async function loadJSON(url) {
   const r = await fetch(url, { cache: "no-cache" });
