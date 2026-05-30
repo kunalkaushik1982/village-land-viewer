@@ -1,0 +1,86 @@
+:root {
+  --bg: #0f1419;
+  --panel: #1c2530;
+  --panel-2: #243140;
+  --text: #e6edf3;
+  --muted: #8b98a5;
+  --accent: #ff8c42;
+  --accent-2: #4cc9f0;
+  --A: #ff5252;
+  --B: #4cc9f0;
+  --C: #ffd166;
+  --D: #06d6a0;
+  --hover: #ffffff;
+  --border: #2c3a4a;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--accent-2); }
+
+.app { display: grid; grid-template-columns: 320px 1fr; height: 100vh; }
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; overflow: auto; }
+.sidebar h1 { font-size: 18px; margin: 0 0 6px; }
+.sidebar p.subtle { color: var(--muted); font-size: 12px; margin: 0 0 16px; }
+
+.section { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+.section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; }
+
+select, input[type="text"], input[type="number"], button {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+button { cursor: pointer; background: var(--accent); color: #1a1208; border: none; font-weight: 600; }
+button.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); font-weight: 500; }
+button + button { margin-top: 6px; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; }
+.legend .chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; }
+.legend .swatch { width: 10px; height: 10px; border-radius: 50%; }
+
+.plot-list { max-height: 260px; overflow: auto; font-size: 13px; }
+.plot-list .row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 4px 6px; border-bottom: 1px solid var(--border); cursor: pointer; }
+.plot-list .row.row-4 { grid-template-columns: 1fr 1.3fr 1fr 1fr; }
+.plot-list .row:hover { background: var(--bg); }
+.plot-list .row.linked { color: var(--text); }
+.plot-list .row.unlinked { color: var(--muted); font-style: italic; }
+.plot-list .row.active { background: var(--accent); color: #1a1208; font-style: normal; font-weight: 600; }
+.plot-list .head { font-weight: 600; color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: 0.06em; cursor: default; }
+.tooltip-box .muted { color: var(--muted); font-size: 11px; }
+
+#map { width: 100%; height: 100%; background: #0a0d12; }
+.leaflet-container { background: #0a0d12; }
+
+.tooltip-box {
+  background: rgba(28, 37, 48, 0.97);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  white-space: nowrap;
+}
+.tooltip-box strong { color: var(--accent); }
+.tooltip-box .muted { color: var(--muted); font-size: 11px; }
+
+.note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+.kbd { background: #0a0d12; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; font-size: 11px; font-family: ui-monospace, monospace; }
+
+.status-pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); }
+
+.toolbar { position: absolute; top: 12px; right: 12px; z-index: 1000; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 8px; display: flex; gap: 6px; align-items: center; }
+.toolbar input { width: 80px; }
+.toolbar .status-pill { background: transparent; }
+
+.tab-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.tab-row a { flex: 1; text-align: center; padding: 6px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; text-decoration: none; color: var(--text); font-size: 13px; }
+.tab-row a.active { background: var(--accent); color: #1a1208; border-color: var(--accent); font-weight: 600; }

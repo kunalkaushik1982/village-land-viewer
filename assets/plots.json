@@ -1,0 +1,776 @@
+{
+  "identifiers": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "initials_map": {
+    "A": "Vi-A",
+    "B": "Ud-B",
+    "C": "RB-C",
+    "D": "Su-D"
+  },
+  "rows": [
+    {
+      "identifier": "A",
+      "sno": 1,
+      "khasra": 60,
+      "plot": 199,
+      "rakba": 36.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 2,
+      "khasra": 115,
+      "plot": 200,
+      "rakba": 34.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 3,
+      "khasra": 4,
+      "plot": 241,
+      "rakba": 36.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 4,
+      "khasra": 60,
+      "plot": 251,
+      "rakba": 25.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 5,
+      "khasra": 115,
+      "plot": 252,
+      "rakba": 24.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 6,
+      "khasra": 4,
+      "plot": 253,
+      "rakba": 13.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 7,
+      "khasra": 60,
+      "plot": 254,
+      "rakba": 14.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 8,
+      "khasra": 115,
+      "plot": 255,
+      "rakba": 15.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 9,
+      "khasra": 114,
+      "plot": 266,
+      "rakba": 20.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 10,
+      "khasra": 59,
+      "plot": 267,
+      "rakba": 17.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 11,
+      "khasra": 59,
+      "plot": 304,
+      "rakba": 11.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 12,
+      "khasra": 114,
+      "plot": 305,
+      "rakba": 10.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 13,
+      "khasra": 115,
+      "plot": 412,
+      "rakba": 28.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 14,
+      "khasra": 60,
+      "plot": 413,
+      "rakba": 24.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 15,
+      "khasra": 60,
+      "plot": 590,
+      "rakba": 12.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 16,
+      "khasra": 59,
+      "plot": 606,
+      "rakba": 6.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 17,
+      "khasra": 114,
+      "plot": 607,
+      "rakba": 5.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 18,
+      "khasra": 115,
+      "plot": 611,
+      "rakba": 19.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 19,
+      "khasra": 115,
+      "plot": 626,
+      "rakba": 20.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 20,
+      "khasra": 60,
+      "plot": 627,
+      "rakba": 22.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 21,
+      "khasra": 130,
+      "plot": 668,
+      "rakba": 19.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 22,
+      "khasra": 132,
+      "plot": 669,
+      "rakba": 18.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 23,
+      "khasra": 114,
+      "plot": 1015,
+      "rakba": 31.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 24,
+      "khasra": 59,
+      "plot": 1016,
+      "rakba": 11.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 25,
+      "khasra": 60,
+      "plot": 1060,
+      "rakba": 4.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 26,
+      "khasra": 59,
+      "plot": 1096,
+      "rakba": 16.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "A",
+      "sno": 27,
+      "khasra": 155,
+      "plot": 1244,
+      "rakba": 7.0,
+      "initials": "Vi-A"
+    },
+    {
+      "identifier": "B",
+      "sno": 1,
+      "khasra": 3,
+      "plot": 108,
+      "rakba": 20.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 2,
+      "khasra": 59,
+      "plot": 105,
+      "rakba": 25.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 3,
+      "khasra": 114,
+      "plot": 106,
+      "rakba": 17.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 4,
+      "khasra": 115,
+      "plot": 129,
+      "rakba": 37.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 5,
+      "khasra": 60,
+      "plot": 130,
+      "rakba": 12.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 6,
+      "khasra": 115,
+      "plot": 132,
+      "rakba": 16.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 7,
+      "khasra": 4,
+      "plot": 133,
+      "rakba": 12.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 8,
+      "khasra": 115,
+      "plot": 141,
+      "rakba": 20.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 9,
+      "khasra": 60,
+      "plot": 143,
+      "rakba": 34.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 10,
+      "khasra": 59,
+      "plot": 151,
+      "rakba": 25.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 11,
+      "khasra": 114,
+      "plot": 152,
+      "rakba": 24.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 12,
+      "khasra": 60,
+      "plot": 310,
+      "rakba": 10.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 13,
+      "khasra": 59,
+      "plot": 635,
+      "rakba": 39.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 14,
+      "khasra": 114,
+      "plot": 636,
+      "rakba": 42.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 15,
+      "khasra": 3,
+      "plot": 642,
+      "rakba": 36.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 16,
+      "khasra": 59,
+      "plot": 812,
+      "rakba": 21.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 17,
+      "khasra": 114,
+      "plot": 813,
+      "rakba": 16.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 18,
+      "khasra": 21,
+      "plot": 1021,
+      "rakba": 27.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 19,
+      "khasra": 22,
+      "plot": 1081,
+      "rakba": 9.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 20,
+      "khasra": 115,
+      "plot": 1081,
+      "rakba": 6.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 21,
+      "khasra": 115,
+      "plot": 1150,
+      "rakba": 12.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "B",
+      "sno": 22,
+      "khasra": 155,
+      "plot": 1244,
+      "rakba": 7.0,
+      "initials": "Ud-B"
+    },
+    {
+      "identifier": "C",
+      "sno": 1,
+      "khasra": 115,
+      "plot": 9,
+      "rakba": 53.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 2,
+      "khasra": 4,
+      "plot": 18,
+      "rakba": 23.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 3,
+      "khasra": 60,
+      "plot": 19,
+      "rakba": 79.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 4,
+      "khasra": 60,
+      "plot": 22,
+      "rakba": 35.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 5,
+      "khasra": 60,
+      "plot": 53,
+      "rakba": 27.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 6,
+      "khasra": 60,
+      "plot": 56,
+      "rakba": 10.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 7,
+      "khasra": 115,
+      "plot": 63,
+      "rakba": 9.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 8,
+      "khasra": 60,
+      "plot": 64,
+      "rakba": 10.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 9,
+      "khasra": 115,
+      "plot": 67,
+      "rakba": 15.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 10,
+      "khasra": 39,
+      "plot": 70,
+      "rakba": 14.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 11,
+      "khasra": 60,
+      "plot": 74,
+      "rakba": 22.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 12,
+      "khasra": 115,
+      "plot": 76,
+      "rakba": 28.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 13,
+      "khasra": 60,
+      "plot": 397,
+      "rakba": 11.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 14,
+      "khasra": 115,
+      "plot": 398,
+      "rakba": 9.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 15,
+      "khasra": 115,
+      "plot": 399,
+      "rakba": 9.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 16,
+      "khasra": 60,
+      "plot": 400,
+      "rakba": 8.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 17,
+      "khasra": 115,
+      "plot": 1036,
+      "rakba": 16.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 18,
+      "khasra": 60,
+      "plot": 1037,
+      "rakba": 13.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 19,
+      "khasra": 21,
+      "plot": 1021,
+      "rakba": 13.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 20,
+      "khasra": 28,
+      "plot": 1022,
+      "rakba": 14.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 21,
+      "khasra": 22,
+      "plot": 1080,
+      "rakba": 2.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 22,
+      "khasra": 22,
+      "plot": 1081,
+      "rakba": 1.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 23,
+      "khasra": 29,
+      "plot": 1082,
+      "rakba": 6.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 24,
+      "khasra": 59,
+      "plot": 1105,
+      "rakba": 34.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "C",
+      "sno": 25,
+      "khasra": 155,
+      "plot": 1244,
+      "rakba": 6.0,
+      "initials": "RB-C"
+    },
+    {
+      "identifier": "D",
+      "sno": 1,
+      "khasra": 60,
+      "plot": 88,
+      "rakba": 23.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 2,
+      "khasra": 115,
+      "plot": 90,
+      "rakba": 68.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 3,
+      "khasra": 60,
+      "plot": 92,
+      "rakba": 3.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 4,
+      "khasra": 60,
+      "plot": 101,
+      "rakba": 9.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 5,
+      "khasra": 115,
+      "plot": 102,
+      "rakba": 49.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 6,
+      "khasra": 115,
+      "plot": 325,
+      "rakba": 17.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 7,
+      "khasra": 115,
+      "plot": 326,
+      "rakba": 12.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 8,
+      "khasra": 60,
+      "plot": 327,
+      "rakba": 11.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 9,
+      "khasra": 60,
+      "plot": 328,
+      "rakba": 9.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 10,
+      "khasra": 60,
+      "plot": 334,
+      "rakba": 52.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 11,
+      "khasra": 60,
+      "plot": 343,
+      "rakba": 7.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 12,
+      "khasra": 60,
+      "plot": 344,
+      "rakba": 8.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 13,
+      "khasra": 21,
+      "plot": 1021,
+      "rakba": 27.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 14,
+      "khasra": 22,
+      "plot": 1080,
+      "rakba": 27.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 15,
+      "khasra": 22,
+      "plot": 1081,
+      "rakba": 3.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 16,
+      "khasra": 114,
+      "plot": 1093,
+      "rakba": 41.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 17,
+      "khasra": 59,
+      "plot": 1094,
+      "rakba": 43.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 18,
+      "khasra": 114,
+      "plot": 1106,
+      "rakba": 38.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 19,
+      "khasra": 114,
+      "plot": 1143,
+      "rakba": 10.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 20,
+      "khasra": 59,
+      "plot": 1144,
+      "rakba": 11.0,
+      "initials": "Su-D"
+    },
+    {
+      "identifier": "D",
+      "sno": 21,
+      "khasra": 155,
+      "plot": 1244,
+      "rakba": 6.0,
+      "initials": "Su-D"
+    }
+  ]
+}

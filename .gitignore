@@ -1,0 +1,10 @@
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Local-only backups
+assets/*.prev.json
+assets/*.before_*.json

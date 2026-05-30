@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plot Labeler</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Plot Labeler</h1>
+      <p class="subtle">Click a polygon on the map, then assign its plot number. Mappings save automatically (browser local storage).</p>
+
+      <div class="tab-row">
+        <a href="index.html">Viewer</a>
+        <a href="labeler.html" class="active">Labeler</a>
+      </div>
+
+      <div class="section">
+        <h2>Current target</h2>
+        <p class="note" id="target-info">Press <span class="kbd">Tab</span> to start with the first pending plot.</p>
+      </div>
+
+      <div class="section">
+        <h2>Selected polygon</h2>
+        <p class="note" id="sel-info">None — click a polygon on the map.</p>
+        <input type="number" id="plot-input" placeholder="Plot number, then Enter" inputmode="numeric" />
+        <p class="note" id="match-info"></p>
+        <button id="btn-unassign" class="ghost">Unassign (Backspace)</button>
+        <p class="note">
+          <span class="kbd">Tab</span> / <span class="kbd">Enter</span> = save current + next pending ·
+          <span class="kbd">Shift+Tab</span> = previous (no save) ·
+          <span class="kbd">Backspace</span> on empty input = unassign
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>View options</h2>
+        <label style="display:flex; align-items:center; gap:8px; font-size:13px;">
+          <input type="checkbox" id="toggle-hide-labeled" />
+          <span>Hide already-labeled polygons</span>
+        </label>
+        <p class="note">Labeled polygons green border ke saath dikhte hain — yeh option unko hide kar dega taaki sirf unlabeled dikhe.</p>
+      </div>
+
+      <div class="section">
+        <h2>Draw new polygon</h2>
+        <p class="note" id="draw-status">Use this for plots whose boundary auto-detect ne miss kar diya.</p>
+        <button id="btn-draw-start">Start drawing (D)</button>
+        <button id="btn-draw-finish" class="ghost" disabled>Finish (Enter)</button>
+        <button id="btn-draw-cancel" class="ghost" disabled>Cancel (Esc)</button>
+        <p class="note">
+          1. <span class="kbd">D</span> ya Start dabao →
+          2. Map par plot ke corners pe click karo (4-6 points) →
+          3. <span class="kbd">Enter</span> ya Finish →
+          4. Naya polygon select ho jayega, plot number type karke <span class="kbd">Tab</span>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Filter unlabeled plots</h2>
+        <select id="filter-ident">
+          <option value="">All identifiers</option>
+        </select>
+        <p class="note">Pending plots from records (click to copy number):</p>
+        <div class="plot-list" id="pending-list"></div>
+      </div>
+
+      <div class="section">
+        <h2>Save / load</h2>
+        <button id="btn-export">Download mapping.json</button>
+        <button id="btn-import" class="ghost">Import mapping.json</button>
+        <input type="file" id="import-file" accept="application/json" style="display:none" />
+        <button id="btn-clear" class="ghost">Clear local mapping</button>
+        <p class="note">After downloading, replace <span class="kbd">site/assets/mapping.json</span> and redeploy. Without that, anyone visiting only sees what their browser has labeled.</p>
+      </div>
+
+      <p class="note">
+        <span class="status-pill" id="status-pill">0 of 95 labeled</span>
+      </p>
+    </aside>
+
+    <div id="map"></div>
+    <div class="toolbar">
+      <span class="status-pill" id="poly-count">0 polygons</span>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="js/labeler.js"></script>
+</body>
+</html>

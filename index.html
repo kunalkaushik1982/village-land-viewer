@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Village Land Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Village Land Viewer</h1>
+      <p class="subtle">Select an identifier to highlight their plots. Hover any plot for details.</p>
+
+      <div class="tab-row">
+        <a href="index.html" class="active">Viewer</a>
+        <a href="labeler.html">Labeler</a>
+      </div>
+
+      <div class="section">
+        <h2>Identifier</h2>
+        <select id="identifier"></select>
+        <p class="note" id="ident-summary"></p>
+      </div>
+
+      <div class="section">
+        <h2>Legend</h2>
+        <div class="legend">
+          <span class="chip"><span class="swatch" style="background:#ff5252"></span>A · Vi-A</span>
+          <span class="chip"><span class="swatch" style="background:#4cc9f0"></span>B · Ud-B</span>
+          <span class="chip"><span class="swatch" style="background:#ffd166"></span>C · RB-C</span>
+          <span class="chip"><span class="swatch" style="background:#06d6a0"></span>D · Su-D</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Plots (<span id="plots-count">0</span>)</h2>
+        <div class="plot-list" id="plots-list"></div>
+        <p class="note"><span class="status-pill" id="link-status">linked 0 / 0</span> Click a row to fly to that plot.</p>
+      </div>
+
+      <p class="note">Tip: drag to pan, scroll to zoom, double-click to zoom in.</p>
+    </aside>
+
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="js/viewer.js"></script>
+</body>
+</html>
