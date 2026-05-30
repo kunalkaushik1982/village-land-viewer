@@ -89,14 +89,13 @@ export function initImageMap(elId, imgW, imgH, imgUrl) {
   });
   L.control.zoom({ position: "bottomright" }).addTo(map);
   const bounds = [[0, 0], [imgH, imgW]];
-  L.imageOverlay(imgUrl, bounds).addTo(map);
+  const baseOverlay = L.imageOverlay(imgUrl, bounds).addTo(map);
   map.fitBounds(bounds);
   map.setMaxBounds([[-imgH * 0.2, -imgW * 0.2], [imgH * 1.2, imgW * 1.2]]);
 
-  // Wire up the sidebar collapse toggle, if present on the page.
   setupSidebarToggle(map, bounds);
 
-  return { map, bounds };
+  return { map, bounds, baseOverlay };
 }
 
 function setupSidebarToggle(map, bounds) {

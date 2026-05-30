@@ -12,7 +12,25 @@ const ALL_IDENT = "(all)";
 
 const imgW = polysData.width;
 const imgH = polysData.height;
-const { map } = initImageMap("map", imgW, imgH, "assets/map.jpg");
+const { map, baseOverlay: pdfOverlay } = initImageMap("map", imgW, imgH, "assets/map.jpg");
+
+// Optional Bhu-Naksha official base map (loaded lazily on first toggle)
+let bhuOverlay = null;
+let bhuMeta = null;
+async function ensureBhuOverlay() {
+  if (bhuOverlay) return bhuOverlay;
+  try {
+    bhuMeta = await loadJSON("assets/bhunaksha_meta.json");
+    const bw = bhuMeta.image.width, bh = bhuMeta.image.height;
+    bhuOverlay = L.imageOverlay(bhuMeta.image.file, [[0, 0], [bh, bw]]);
+  } catch (e) {
+    console.warn("Bhu-Naksha metadata unavailable:", e);
+    bhuOverlay = null;
+  }
+  return bhuOverlay;
+}
+
+const pdfBounds = [[0, 0], [imgH, imgW]];
 
 // Combined polygon list: auto-detected + user-drawn (from mapping.json/localStorage)
 const allPolygons = [...polysData.polygons, ...userPolygons];
@@ -133,6 +151,43 @@ function setIdentifier(ident) {
 }
 
 sel.addEventListener("change", () => setIdentifier(sel.value));
+
+// Base-map toggle — switch between user's PDF map and Bhu-Naksha official.
+// Polygon overlays only make sense on the PDF (their coords are in PDF pixels);
+// on Bhu-Naksha we hide them and surface a note.
+const basemapSel = document.getElementById("basemap");
+const basemapNote = document.getElementById("basemap-note");
+async function setBaseMap(mode) {
+  if (mode === "bhunaksha") {
+    const bhu = await ensureBhuOverlay();
+    if (!bhu) {
+      basemapNote.textContent = "Bhu-Naksha map data not available (assets/bhunaksha_meta.json missing).";
+      basemapSel.value = "pdf";
+      return;
+    }
+    map.removeLayer(pdfOverlay);
+    allLayers.remove();
+    highlightLayers.remove();
+    bhu.addTo(map);
+    const bw = bhuMeta.image.width, bh = bhuMeta.image.height;
+    const bhuBounds = [[0, 0], [bh, bw]];
+    map.setMaxBounds([[-bh * 0.2, -bw * 0.2], [bh * 1.2, bw * 1.2]]);
+    map.fitBounds(bhuBounds);
+    basemapNote.innerHTML =
+      `Official Bhu-Naksha cadastral map — Source: <a href="https://bhunaksha.bihar.gov.in" target="_blank">bhunaksha.bihar.gov.in</a>.<br>` +
+      `District: ${bhuMeta.location.district} · Circle: ${bhuMeta.location.circle} · Mauza: ${bhuMeta.location.mauza}.<br>` +
+      `<em>Owner highlights are only on the PDF map (Phase 2 will align them).</em>`;
+  } else {
+    if (bhuOverlay) map.removeLayer(bhuOverlay);
+    pdfOverlay.addTo(map);
+    allLayers.addTo(map);
+    highlightLayers.addTo(map);
+    map.setMaxBounds([[-imgH * 0.2, -imgW * 0.2], [imgH * 1.2, imgW * 1.2]]);
+    map.fitBounds(pdfBounds);
+    basemapNote.textContent = "PDF map mein owner highlights visible hain. Bhu-Naksha switch karne pe official cadastral map dikhega bina overlays ke.";
+  }
+}
+basemapSel.addEventListener("change", () => setBaseMap(basemapSel.value));
 
 // Auto-pick All if any data is linked, else first real identifier with data, else (none).
 const totalLinked = Object.keys(polygonToPlot).length;
