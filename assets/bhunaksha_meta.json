@@ -20,17 +20,17 @@
     "ymin": 2784453.4369858997,
     "xmax": 292640.3565219231,
     "ymax": 2787774.864730604,
-    "epsg": 24345,
-    "crs": "Kalianpur 1975 / UTM zone IIb (India)"
+    "epsg": 32645,
+    "crs": "WGS 84 / UTM zone 45N — confirmed against Bhu-Naksha srs=4326 API"
   },
   "bounds_latlon": {
-    "west": 84.883243,
-    "south": 25.163514,
-    "east": 84.939588,
-    "north": 25.194292
+    "west": 84.885830,
+    "south": 25.161056,
+    "east": 84.942174,
+    "north": 25.191833
   },
   "center_latlon": {
-    "lat": 25.178903,
-    "lon": 84.911416
+    "lat": 25.176445,
+    "lon": 84.914002
   }
 }

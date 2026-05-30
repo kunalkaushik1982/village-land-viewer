@@ -26,7 +26,7 @@
     "xmax": 292640.3565219231,
     "ymax": 2787774.864730604
   },
-  "epsg_in": 24345,
+  "epsg_in": 32645,
   "epsg_out": 4326,
   "calibration": {
     "pairs_total": 455,
