@@ -33,11 +33,23 @@
           <option value="google">Google Satellite</option>
           <option value="osm">OpenStreetMap</option>
         </select>
-        <p class="note">Plots on top of selected imagery.</p>
-        <label style="display:flex; align-items:center; gap:8px; font-size:13px; margin-top:8px;">
+      </div>
+
+      <div class="section">
+        <h2>Bhu-Naksha overlay</h2>
+        <label style="display:flex; align-items:center; gap:8px; font-size:13px;">
           <input type="checkbox" id="toggle-bhu-overlay" />
-          <span>Show Bhu-Naksha cadastral overlay (semi-transparent)</span>
+          <span>Show cadastral overlay</span>
         </label>
+        <p class="note" style="margin-top:10px;">Transparency</p>
+        <input type="range" id="bhu-opacity" min="0" max="100" value="50" style="width:100%;" />
+        <label style="display:flex; align-items:center; gap:8px; font-size:13px; margin-top:10px;">
+          <input type="checkbox" id="toggle-bhu-drag" />
+          <span>Enable drag-to-align (move overlay + plots)</span>
+        </label>
+        <p class="note" id="align-status">Shift: 0 m east, 0 m north</p>
+        <button id="btn-align-reset" class="ghost" style="margin-top:6px;">Reset alignment</button>
+        <p class="note" style="margin-top:6px;">Drag the cadastral overlay on the map until it lines up with the actual settlement / fields. Your colored plots will move with it. Alignment auto-saves to this browser.</p>
       </div>
 
       <div class="section">
