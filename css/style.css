@@ -15,13 +15,43 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+html, body { margin: 0; height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); -webkit-text-size-adjust: 100%; }
 a { color: var(--accent-2); }
 
-.app { display: grid; grid-template-columns: 320px 1fr; height: 100vh; }
-.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; overflow: auto; }
-.sidebar h1 { font-size: 18px; margin: 0 0 6px; }
+.app { display: grid; grid-template-columns: 320px 1fr; height: 100vh; height: 100dvh; position: relative; }
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; overflow: auto; transition: transform 220ms ease, width 220ms ease; }
+.sidebar h1 { font-size: 18px; margin: 0 0 6px; padding-right: 36px; }
 .sidebar p.subtle { color: var(--muted); font-size: 12px; margin: 0 0 16px; }
+.map-wrap { position: relative; min-width: 0; }
+
+/* Sidebar toggle — visible on all screen sizes, sits at top-left of map */
+#sidebar-toggle {
+  position: absolute;
+  top: 12px; left: 12px;
+  z-index: 1100;
+  width: 40px; height: 40px;
+  padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-size: 20px; line-height: 1;
+}
+#sidebar-toggle:hover { background: var(--panel-2); }
+#sidebar-toggle .icon-close { display: none; }
+.app.sidebar-collapsed #sidebar-toggle .icon-close { display: none; }
+.app.sidebar-collapsed #sidebar-toggle .icon-open { display: block; }
+.app:not(.sidebar-collapsed) #sidebar-toggle .icon-close { display: block; }
+.app:not(.sidebar-collapsed) #sidebar-toggle .icon-open { display: none; }
+
+/* Desktop: collapsed = sidebar hidden, map full width */
+.app.sidebar-collapsed { grid-template-columns: 0 1fr; }
+.app.sidebar-collapsed .sidebar { overflow: hidden; padding: 0; border: 0; }
+
+/* Backdrop only on mobile when sidebar overlays the map */
+.sidebar-backdrop { display: none; }
 
 .section { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
 .section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; }
@@ -84,3 +114,54 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .tab-row { display: flex; gap: 8px; margin-bottom: 12px; }
 .tab-row a { flex: 1; text-align: center; padding: 6px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; text-decoration: none; color: var(--text); font-size: 13px; }
 .tab-row a.active { background: var(--accent); color: #1a1208; border-color: var(--accent); font-weight: 600; }
+
+/* ========================================================== */
+/* Mobile / narrow viewport — sidebar becomes a slide-in panel */
+/* ========================================================== */
+@media (max-width: 768px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 86vw;
+    max-width: 360px;
+    height: 100%;
+    height: 100dvh;
+    z-index: 1200;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+    transform: translateX(0);
+  }
+  .app.sidebar-collapsed { grid-template-columns: 1fr; }
+  .app.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+    /* Re-show overflow so transition reads correctly */
+    padding: 16px;
+    border-right: 1px solid var(--border);
+  }
+  .sidebar-backdrop {
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1150;
+    opacity: 1;
+    transition: opacity 220ms ease;
+  }
+  .app.sidebar-collapsed .sidebar-backdrop {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Larger tap targets on touch */
+  select, input[type="text"], input[type="number"], button { padding: 10px 12px; font-size: 15px; }
+  .plot-list { font-size: 14px; max-height: 50vh; }
+  .plot-list .row { padding: 8px 6px; }
+  #sidebar-toggle { top: 8px; left: 8px; width: 44px; height: 44px; font-size: 22px; }
+  .toolbar { top: 8px; right: 8px; padding: 6px; }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+  .sidebar { width: 92vw; }
+  .sidebar h1 { font-size: 16px; }
+  .section { padding: 10px; }
+}

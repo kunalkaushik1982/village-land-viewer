@@ -84,12 +84,65 @@ export function initImageMap(elId, imgW, imgH, imgUrl) {
     wheelPxPerZoomLevel: 80,
     attributionControl: false,
     preferCanvas: true,
+    tap: true,
+    zoomControl: false,   // move zoom controls out of the way of the sidebar toggle
   });
+  L.control.zoom({ position: "bottomright" }).addTo(map);
   const bounds = [[0, 0], [imgH, imgW]];
   L.imageOverlay(imgUrl, bounds).addTo(map);
   map.fitBounds(bounds);
   map.setMaxBounds([[-imgH * 0.2, -imgW * 0.2], [imgH * 1.2, imgW * 1.2]]);
+
+  // Wire up the sidebar collapse toggle, if present on the page.
+  setupSidebarToggle(map, bounds);
+
   return { map, bounds };
+}
+
+function setupSidebarToggle(map, bounds) {
+  const app = document.querySelector(".app");
+  const btn = document.getElementById("sidebar-toggle");
+  const backdrop = document.getElementById("sidebar-backdrop");
+  if (!app || !btn) return;
+
+  const isNarrow = () => window.matchMedia("(max-width: 768px)").matches;
+
+  // On narrow screens default to collapsed so the map gets full width on load.
+  if (isNarrow()) app.classList.add("sidebar-collapsed");
+  if (backdrop) backdrop.hidden = !isNarrow();
+
+  function invalidateLater() {
+    // Leaflet needs to recalculate its container size after CSS transition.
+    setTimeout(() => {
+      map.invalidateSize();
+      // If now collapsed, keep the current view; if newly opened, refit so the
+      // whole map is visible in the smaller area on mobile.
+    }, 260);
+  }
+
+  function toggle(forceCollapse) {
+    const wasCollapsed = app.classList.contains("sidebar-collapsed");
+    const shouldCollapse = forceCollapse === undefined ? !wasCollapsed : forceCollapse;
+    app.classList.toggle("sidebar-collapsed", shouldCollapse);
+    if (backdrop) backdrop.hidden = !isNarrow();
+    invalidateLater();
+  }
+
+  btn.addEventListener("click", () => toggle());
+  if (backdrop) backdrop.addEventListener("click", () => toggle(true));
+
+  // Re-evaluate behaviour on resize (e.g. rotate phone)
+  window.addEventListener("resize", () => {
+    if (backdrop) backdrop.hidden = !isNarrow();
+    map.invalidateSize();
+  });
+
+  // Esc closes overlay sidebar on mobile
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isNarrow() && !app.classList.contains("sidebar-collapsed")) {
+      toggle(true);
+    }
+  });
 }
 
 // Convert a polygon's [x, y] image coords -> Leaflet [lat, lng] = [imgH - y, x].
