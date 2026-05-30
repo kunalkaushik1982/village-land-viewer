@@ -50,7 +50,8 @@ document.getElementById("basemap-tiles").addEventListener("change", (e) => setTi
 // Optional reference overlay: the official Bhu-Naksha cadastral raster at its
 // claimed lat/lon bounds (EPSG:24345 Indian datum, the projection actually used
 // by Bihar Bhu-Naksha — not WGS84 UTM as the WMS metadata claims).
-const BHU_CS_BOUNDS = [[25.161056, 84.885830], [25.191833, 84.942174]];
+// Bounds shifted 200m west to match the user-reported empirical satellite offset
+const BHU_CS_BOUNDS = [[25.161027, 84.883847], [25.191805, 84.940191]];
 const bhuOverlay = L.imageOverlay("assets/bhunaksha_cs_debug.jpg", BHU_CS_BOUNDS, {opacity: 0.5});
 const bhuToggle = document.getElementById("toggle-bhu-overlay");
 if (bhuToggle) {
